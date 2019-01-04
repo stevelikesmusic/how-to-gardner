@@ -8,9 +8,12 @@ const headerCss = css({
   color: 'white',
 })
 
-const Header = () => (
-  <div css={headerCss}>
-    <h1>How to Gardner</h1>
+const Header = ({ children }) => (
+  <div>
+    <div css={headerCss}>
+      <h1>How to Gardner</h1>
+    </div>
+    {children}
   </div>
 )
 
