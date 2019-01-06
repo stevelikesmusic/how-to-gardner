@@ -1,18 +1,27 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import { Link, graphql } from 'gatsby'
-import Header from 'layouts/header'
+import ArticleHeader from 'components/ArticleHeader'
+
+const mainCss = {
+  maxWidth: 800,
+  margin: '0 auto',
+  fontSize: 20,
+}
 
 const Article = props => {
   const post = props.data.markdownRemark
   const siteTitle = props.data.site.siteMetadata.title
 
   return (
-    <Header>
-      <h1>{post.frontmatter.title}</h1>
-      <p>{post.frontmatter.date}</p>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
-    </Header>
+    <div>
+      <ArticleHeader />
+      <main css={mainCss}>
+        <h1>{post.frontmatter.title}</h1>
+        <p>{post.frontmatter.date}</p>
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      </main>
+    </div>
   )
 }
 

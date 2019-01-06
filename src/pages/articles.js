@@ -1,14 +1,19 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import { Link, graphql } from 'gatsby'
-import Header from 'layouts/Header'
+import MainLayout from 'layouts/MainLayout'
+
+const listCss = css({
+  listStyleType: 'none',
+  padding: 0,
+})
 
 const ArticlesIndex = ({ data }) => {
   const articleList = data.allMarkdownRemark.edges
 
   return (
-    <Header>
-      <ul>
+    <MainLayout>
+      <ul css={listCss}>
         {articleList.map(({ node }) => (
           <li key={node.id}>
             <Link to={node.fields.slug}>
@@ -19,7 +24,7 @@ const ArticlesIndex = ({ data }) => {
           </li>
         ))}
       </ul>
-    </Header>
+    </MainLayout>
   )
 }
 
