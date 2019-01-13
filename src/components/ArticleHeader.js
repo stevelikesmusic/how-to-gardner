@@ -23,7 +23,7 @@ const ArticleHeader = () => (
     <HomeLink />
     <div>
       {Object.keys(SECTIONS).map(sectionLink => (
-        <Link css={linkCss} to={`/${sectionLink}`}>
+        <Link key={sectionLink} css={linkCss} to={`/${sectionLink}`}>
           {_.capitalize(sectionLink)}
         </Link>
       ))}

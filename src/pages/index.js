@@ -20,8 +20,8 @@ const IndexPage = () => (
       below:
     </p>
     <SocialLinks />
-    {Object.entries(SECTIONS).map(([link, label]) => (
-      <p>
+    {Object.entries(SECTIONS).map(([link, label], i) => (
+      <p key={i}>
         <Link to={`/${link}`}>{label}</Link>
       </p>
     ))}
