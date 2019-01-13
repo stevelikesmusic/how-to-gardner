@@ -1,7 +1,8 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css, jsx, Global } from '@emotion/core'
 import { Link, graphql } from 'gatsby'
 import ArticleHeader from 'components/ArticleHeader'
+import sanitizeCss from 'utils/sanitize-css'
 
 const mainCss = {
   maxWidth: 800,
@@ -15,6 +16,7 @@ const Article = props => {
 
   return (
     <div>
+      <Global styles={sanitizeCss} />
       <ArticleHeader />
       <main css={mainCss}>
         <h1>{post.frontmatter.title}</h1>
