@@ -11,15 +11,15 @@ module.exports = {
       {
         objects: 'only-multiline',
         arrays: 'only-multiline',
-        imports: 'never',
-        exports: 'never',
+        imports: 'only-multiline',
+        exports: 'only-multiline',
         functions: 'never',
       },
     ],
 
     // options to emulate prettier setup
     semi: ['error', 'never'],
-    'max-len': ['error', { code: 80 }],
+    'max-len': ['error', { code: 90 }],
     'arrow-parens': ['error', 'as-needed'],
 
     // standard.js
